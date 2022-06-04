@@ -11,7 +11,7 @@
         // Sets the desired Height for content when expanded.
         public static void SetContentHeight(this Expander expander, double contentHeight)
         {
-           (expander.Content as FrameworkElement).Height = contentHeight;
+            (expander.Content as FrameworkElement).Height = contentHeight;
         }
     }
 }
