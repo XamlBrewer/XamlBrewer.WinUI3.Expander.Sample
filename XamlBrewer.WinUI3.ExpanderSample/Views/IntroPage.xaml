@@ -25,9 +25,23 @@
                           CornerRadius="4" />
                 </Expander>
                 <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="Orange">Orange</TextBlock>
-                    </Expander.Header>
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <BitmapIcon UriSource="/Assets/Orange.png"
+                                            ShowAsMonochrome="False"
+                                            Height="24" />
+                                <TextBlock Foreground="Orange"
+                                           HorizontalAlignment="Right"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="1">Orange</TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
                     <Grid Background="Orange"
                           Height="100"
                           Width="200"
@@ -70,9 +84,23 @@
                           CornerRadius="4" />
                 </Expander>
                 <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="Violet">Violet</TextBlock>
-                    </Expander.Header>
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <BitmapIcon UriSource="/Assets/Violet.png"
+                                            ShowAsMonochrome="False"
+                                            Height="24" />
+                                <TextBlock Foreground="Violet"
+                                           HorizontalAlignment="Right"
+                                           VerticalAlignment="Center"
+                                           Grid.Column="1">Violet</TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
                     <Grid Background="Violet"
                           Height="100"
                           Width="200"
@@ -81,9 +109,10 @@
             </StackPanel>
         </ScrollViewer>
 
-        <ContentPresenter x:Name="HorizontalExpander" 
+        <ContentPresenter x:Name="HorizontalExpander"
                           RelativePanel.RightOf="VerticalExpander"
-                          Margin="20 0 0 0" Height="234">
+                          Margin="20 0 0 0"
+                          Height="234">
             <ContentPresenter.RenderTransform>
                 <RotateTransform Angle="270"
                                  CenterX="117"

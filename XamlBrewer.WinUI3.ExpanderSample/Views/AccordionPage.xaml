@@ -7,79 +7,75 @@
       mc:Ignorable="d"
       Background="Transparent">
 
-    <RelativePanel VerticalAlignment="Stretch"
+    <RelativePanel x:Name="Host"
+                   VerticalAlignment="Stretch"
                    HorizontalAlignment="Stretch"
                    Margin="20">
-        <ScrollViewer VerticalScrollBarVisibility="Auto"
+        <!--<ScrollViewer VerticalScrollBarVisibility="Auto"
                       VerticalAlignment="Stretch"
-                      HorizontalAlignment="Stretch">
-            <ItemsControl x:Name="Accordion">
-                <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="Red">Red</TextBlock>
-                    </Expander.Header>
-                    <Grid Background="Red"
-                          Height="100"
-                          Width="200"
-                          CornerRadius="4">
-                        <Button Content="Hello there" />
-                    </Grid>
-                </Expander>
-                <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="Orange">Orange</TextBlock>
-                    </Expander.Header>
-                    <Grid Background="Orange"
-                          Height="100"
-                          Width="200"
-                          CornerRadius="4" />
-                </Expander>
-                <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="Yellow">Yellow</TextBlock>
-                    </Expander.Header>
-                    <Grid Background="Yellow"
-                          Height="100"
-                          Width="200"
-                          CornerRadius="4" />
-                </Expander>
-                <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="MediumSpringGreen">Green</TextBlock>
-                    </Expander.Header>
-                    <Grid Background="MediumSpringGreen"
-                          Height="100"
-                          Width="200"
-                          CornerRadius="4" />
-                </Expander>
-                <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="Cyan">Blue</TextBlock>
-                    </Expander.Header>
-                    <Grid Background="Cyan"
-                          Height="100"
-                          Width="200"
-                          CornerRadius="4" />
-                </Expander>
-                <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="MediumPurple">Indigo</TextBlock>
-                    </Expander.Header>
-                    <Grid Background="MediumPurple"
-                          Height="100"
-                          Width="200"
-                          CornerRadius="4" />
-                </Expander>
-                <Expander Width="234">
-                    <Expander.Header>
-                        <TextBlock Foreground="Violet">Violet</TextBlock>
-                    </Expander.Header>
-                    <Grid Background="Violet"
-                          Height="100"
-                          Width="200"
-                          CornerRadius="4" />
-                </Expander>
-            </ItemsControl>
-        </ScrollViewer>
+                      HorizontalAlignment="Stretch">-->
+        <ItemsControl x:Name="Accordion"
+                      Width="480">
+            <Expander HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <Expander.Header>
+                    <TextBlock Foreground="Red">Red</TextBlock>
+                </Expander.Header>
+                <Grid Background="Red"
+                      CornerRadius="4">
+                    <Button Content="Hello there"
+                            HorizontalAlignment="Center" />
+                </Grid>
+            </Expander>
+            <Expander HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <Expander.Header>
+                    <TextBlock Foreground="Orange">Orange</TextBlock>
+                </Expander.Header>
+                <Grid Background="Orange"
+                      CornerRadius="4" />
+            </Expander>
+            <Expander HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <Expander.Header>
+                    <TextBlock Foreground="Yellow">Yellow</TextBlock>
+                </Expander.Header>
+                <Grid Background="Yellow"
+                      CornerRadius="4" />
+            </Expander>
+            <Expander HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <Expander.Header>
+                    <TextBlock Foreground="MediumSpringGreen">Green</TextBlock>
+                </Expander.Header>
+                <Grid Background="MediumSpringGreen"
+                      CornerRadius="4" />
+            </Expander>
+            <Expander HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <Expander.Header>
+                    <TextBlock Foreground="Cyan">Blue</TextBlock>
+                </Expander.Header>
+                <Grid Background="Cyan"
+                      CornerRadius="4" />
+            </Expander>
+            <Expander HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <Expander.Header>
+                    <TextBlock Foreground="MediumPurple">Indigo</TextBlock>
+                </Expander.Header>
+                <Grid Background="MediumPurple"
+                      CornerRadius="4" />
+            </Expander>
+            <Expander HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <Expander.Header>
+                    <TextBlock Foreground="Violet">Violet</TextBlock>
+                </Expander.Header>
+                <Grid Background="Violet"
+                      CornerRadius="4" />
+            </Expander>
+        </ItemsControl>
+        <!--</ScrollViewer>-->
     </RelativePanel>
 </Page>
