@@ -14,8 +14,7 @@
                       VerticalScrollBarVisibility="Auto">
             <StackPanel VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch">
-                <!-- Content Padding = 16 -->
-                <Expander Width="234">
+                <Expander Margin="0 0 0 20">
                     <Expander.Header>
                         <TextBlock Foreground="Red">Red</TextBlock>
                     </Expander.Header>
@@ -109,17 +108,16 @@
             </StackPanel>
         </ScrollViewer>
 
-        <ContentPresenter x:Name="HorizontalExpander"
+        <ContentControl x:Name="HorizontalExpander"
                           RelativePanel.RightOf="VerticalExpander"
-                          Margin="20 0 0 0"
-                          Height="234">
-            <ContentPresenter.RenderTransform>
+                          VerticalContentAlignment="Top"
+                          Margin="20 0 0 0">
+            <ContentControl.RenderTransform>
                 <RotateTransform Angle="270"
                                  CenterX="117"
                                  CenterY="117" />
-            </ContentPresenter.RenderTransform>
+            </ContentControl.RenderTransform>
             <Expander Width="234">
-
                 <Expander.Header>
                     <TextBlock Foreground="DeepPink">Pink</TextBlock>
                 </Expander.Header>
@@ -128,7 +126,7 @@
                       Width="200"
                       CornerRadius="4" />
             </Expander>
-        </ContentPresenter>
+        </ContentControl>
 
         <TextBlock Text="Hello there"
                    RelativePanel.RightOf="HorizontalExpander"
