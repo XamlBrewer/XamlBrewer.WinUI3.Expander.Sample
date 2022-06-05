@@ -40,6 +40,14 @@
                                     ShowAsMonochrome="False" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem Content="Wizard"
+                                    Tag="XamlBrewer.WinUI3.ExpanderSample.Views.WizardPage"
+                                    ToolTipService.ToolTip="Wizard">
+                    <NavigationViewItem.Icon>
+                        <BitmapIcon UriSource="/Assets/Wizard.png"
+                                    ShowAsMonochrome="False" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem Content="About"
