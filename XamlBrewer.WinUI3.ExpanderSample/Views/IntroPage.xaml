@@ -109,9 +109,9 @@
         </ScrollViewer>
 
         <ContentControl x:Name="HorizontalExpander"
-                          RelativePanel.RightOf="VerticalExpander"
-                          VerticalContentAlignment="Top"
-                          Margin="20 0 0 0">
+                        RelativePanel.RightOf="VerticalExpander"
+                        VerticalContentAlignment="Top"
+                        Margin="20 0 0 0" Background="Azure">
             <ContentControl.RenderTransform>
                 <RotateTransform Angle="270"
                                  CenterX="117"
@@ -119,18 +119,30 @@
             </ContentControl.RenderTransform>
             <Expander Width="234">
                 <Expander.Header>
-                    <TextBlock Foreground="DeepPink">Pink</TextBlock>
+                    <TextBlock Foreground="LightPink">Pink</TextBlock>
                 </Expander.Header>
-                <Grid Background="DeepPink"
+                <Grid Background="LightPink"
                       Height="100"
                       Width="200"
-                      CornerRadius="4" />
+                      CornerRadius="4">
+                    <BitmapIcon UriSource="/Assets/Heart.png"
+                                ShowAsMonochrome="False"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Height="80">
+                        <BitmapIcon.RenderTransform>
+                            <RotateTransform Angle="90"
+                                             CenterX="40"
+                                             CenterY="40" />
+                        </BitmapIcon.RenderTransform>
+                    </BitmapIcon>
+                </Grid>
             </Expander>
         </ContentControl>
 
         <TextBlock Text="Hello there"
                    RelativePanel.RightOf="HorizontalExpander"
-                   Margin="20 0 0 0" />
+                   Margin="-166 0 0 0" />
 
     </RelativePanel>
 </Page>
