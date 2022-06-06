@@ -1,21 +1,49 @@
-﻿<Page
-    x:Class="XamlBrewer.WinUI3.ExpanderSample.Views.WizardPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:XamlBrewer.WinUI3.ExpanderSample.Views"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
+﻿<Page x:Class="XamlBrewer.WinUI3.ExpanderSample.Views.WizardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.WinUI3.ExpanderSample.Views"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
       Background="Transparent">
 
     <RelativePanel x:Name="Host"
                    VerticalAlignment="Stretch"
                    HorizontalAlignment="Stretch"
                    Margin="20">
-        <ScrollViewer x:Name="ScrollViewer">
-            <ItemsControl x:Name="Accordion"
-                          Width="480">
-
+        <ScrollViewer x:Name="ScrollViewer"
+                      HorizontalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+            <ItemsControl x:Name="Wizard"
+                          HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch">
+                <Expander HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          Header="Movie">
+                    <Grid Background="Red"
+                          CornerRadius="4">
+                        <Button Content="Hello there"
+                                HorizontalAlignment="Center" />
+                    </Grid>
+                </Expander>
+                <Expander HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          Header="Seat">
+                    <Grid Background="Orange"
+                          CornerRadius="4" />
+                </Expander>
+                <Expander HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          Header="Identity">
+                    <Grid Background="Yellow"
+                          CornerRadius="4" />
+                </Expander>
+                <Expander HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          Header="Payment">
+                    <Grid Background="MediumSpringGreen"
+                          CornerRadius="4" />
+                </Expander>
             </ItemsControl>
         </ScrollViewer>
     </RelativePanel>
