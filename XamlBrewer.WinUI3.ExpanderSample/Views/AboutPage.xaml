@@ -15,7 +15,7 @@
             <Run>* Vertical expansion</Run><LineBreak />
             <Run>* Header customization</Run><LineBreak />            
             <Run>* Grouping into an Accordion</Run><LineBreak />
-            <Run>* Using as a Wizard</Run><LineBreak />
+            <Run>* Using inside a Wizard</Run><LineBreak />
         </TextBlock>
     </Grid>
 </Page>

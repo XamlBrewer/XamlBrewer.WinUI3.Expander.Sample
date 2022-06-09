@@ -4,6 +4,7 @@
       xmlns:local="using:XamlBrewer.WinUI3.ExpanderSample.Views"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:viewmodels="using:XamlBrewer.WinUI3.ExpanderSample.ViewModels"
       mc:Ignorable="d"
       Background="Transparent">
 
@@ -19,30 +20,139 @@
                           HorizontalContentAlignment="Stretch">
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          Header="Movie">
-                    <Grid Background="Red"
-                          CornerRadius="4">
-                        <Button Content="Hello there"
-                                HorizontalAlignment="Center" />
-                    </Grid>
+                          DataContext="{x:Bind ViewModel.Steps[0], Mode=OneWay}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.ContentTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <!-- Default Header -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <!-- Custom Content -->
+                                <!-- ... -->
+                                <!-- Default Footer -->
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Right"
+                                            Grid.Row="2">
+                                    <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
+                                            Content="&lt;= Go back" />
+                                    <Button Command="{x:Bind NextCommand, Mode=OneWay}"
+                                            Content="Continue =&gt;"
+                                            Margin="10 0 0 0" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </Expander.ContentTemplate>
                 </Expander>
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          Header="Seat">
-                    <Grid Background="Orange"
-                          CornerRadius="4" />
+                          DataContext="{x:Bind ViewModel.Steps[1], Mode=OneWay}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.ContentTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <!-- Default Header -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <!-- Custom Content -->
+                                <!-- ... -->
+                                <!-- Default Footer -->
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Right"
+                                            Grid.Row="2">
+                                    <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
+                                            Content="&lt;= Go back" />
+                                    <Button Command="{x:Bind NextCommand, Mode=OneWay}"
+                                            Content="Continue =&gt;"
+                                            Margin="10 0 0 0" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </Expander.ContentTemplate>
                 </Expander>
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          Header="Identity">
-                    <Grid Background="Yellow"
-                          CornerRadius="4" />
+                          DataContext="{x:Bind ViewModel.Steps[2], Mode=OneWay}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.ContentTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <!-- Default Header -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <!-- Custom Content -->
+                                <!-- ... -->
+                                <!-- Default Footer -->
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Right"
+                                            Grid.Row="2">
+                                    <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
+                                            Content="&lt;= Go back" />
+                                    <Button Command="{x:Bind NextCommand, Mode=OneWay}"
+                                            Content="Continue =&gt;"
+                                            Margin="10 0 0 0" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </Expander.ContentTemplate>
                 </Expander>
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          Header="Payment">
-                    <Grid Background="MediumSpringGreen"
-                          CornerRadius="4" />
+                          DataContext="{x:Bind ViewModel.Steps[3], Mode=OneWay}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.ContentTemplate>
+                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <!-- Default Header -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <!-- Custom Content -->
+                                <!-- ... -->
+                                <!-- Default Footer -->
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Right"
+                                            Grid.Row="2">
+                                    <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
+                                            Content="&lt;= Go back" />
+                                    <Button Command="{x:Bind NextCommand, Mode=OneWay}"
+                                            Content="Continue =&gt;"
+                                            Margin="10 0 0 0" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </Expander.ContentTemplate>
                 </Expander>
             </ItemsControl>
         </ScrollViewer>

@@ -11,10 +11,10 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
         [ObservableProperty]
         private WizardStepViewModel _current;
 
-        internal WizardStepViewModel PreviousStep(WizardStepViewModel step)
+        internal WizardStepViewModel NextStep(WizardStepViewModel step)
         {
             var stepIndex = _steps.IndexOf(step);
-            if (stepIndex < _steps.Count)
+            if (stepIndex < _steps.Count - 1)
             {
                 return _steps[stepIndex + 1];
             }
@@ -22,7 +22,7 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
             return null;
         }
 
-        internal WizardStepViewModel NextStep(WizardStepViewModel step)
+        internal WizardStepViewModel PreviousStep(WizardStepViewModel step)
         {
             var stepIndex = _steps.IndexOf(step);
             if (stepIndex > 0)
