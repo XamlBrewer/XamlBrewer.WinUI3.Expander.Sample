@@ -18,6 +18,9 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
         [ObservableProperty]
         private bool _allowReturn = true;
 
+        [ObservableProperty]
+        private bool _isActive;
+
         public WizardStepViewModel(WizardViewModel wizard)
         {
             _wizard = wizard;
@@ -25,8 +28,6 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
             PreviousCommand = new RelayCommand(Previous_Executed, Previous_CanExecute);
             NextCommand = new RelayCommand(Next_Executed, Next_CanExecute);
         }
-
-        public string Test => "Hello There";
 
         public ICommand PreviousCommand { get; private set; }
 
@@ -36,7 +37,22 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
         { }
 
         private void Previous_Executed()
-        { }
+        {
+            var previous = _wizard.PreviousStep(this);
+
+            if (previous is null)
+            {
+                return;
+            }
+
+            if (!previous.AllowReturn)
+            {
+                return;
+            }
+
+            IsActive = false;
+            previous.IsActive = true;
+        }
 
         private bool Previous_CanExecute()
         {
@@ -56,7 +72,17 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
         }
 
         private void Next_Executed()
-        { }
+        {
+            var next = _wizard.NextStep(this);
+
+            if (next is null)
+            {
+                return;
+            }
+
+            IsActive = false;
+            next.IsActive = true;
+        }
 
         private bool Next_CanExecute()
         {

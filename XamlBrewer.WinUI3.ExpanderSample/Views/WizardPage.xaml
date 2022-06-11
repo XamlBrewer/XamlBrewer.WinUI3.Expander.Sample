@@ -20,7 +20,8 @@
                           HorizontalContentAlignment="Stretch">
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          DataContext="{x:Bind ViewModel.Steps[0], Mode=OneWay}">
+                          DataContext="{x:Bind ViewModel.Steps[0], Mode=OneWay}"
+                          IsExpanded="{x:Bind ViewModel.Steps[0].IsActive, Mode=TwoWay}">
                     <Expander.HeaderTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
@@ -32,20 +33,32 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
                                     <RowDefinition Height="auto" />
-                                    <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
-                                <!-- Default Header -->
-                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
                                 <!-- Custom Content -->
-                                <!-- ... -->
-                                <!-- Default Footer -->
+                                <BitmapIcon UriSource="/Assets/Movie.png"
+                                            ShowAsMonochrome="False"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Left"
+                                            Margin="0 0 10 0"
+                                            Height="240"
+                                            Grid.RowSpan="2" />
+                                <!-- Default Content -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}"
+                                           Grid.Column="1" />
                                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Right"
-                                            Grid.Row="2">
-                                    <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
-                                            Content="&lt;= Go back" />
+                                            VerticalAlignment="Bottom"
+                                            Grid.Row="1"
+                                            Grid.Column="1">
+                                    <!--<Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
+                                            Content="&lt;  Go back" />-->
                                     <Button Command="{x:Bind NextCommand, Mode=OneWay}"
-                                            Content="Continue =&gt;"
+                                            Content="Continue  &gt;"
                                             Margin="10 0 0 0" />
                                 </StackPanel>
                             </Grid>
@@ -54,7 +67,9 @@
                 </Expander>
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          DataContext="{x:Bind ViewModel.Steps[1], Mode=OneWay}">
+                          DataContext="{x:Bind ViewModel.Steps[1], Mode=OneWay}"
+                          IsExpanded="{x:Bind ViewModel.Steps[1].IsActive, Mode=TwoWay}"
+                          Margin="0 4 0 0">
                     <Expander.HeaderTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
@@ -66,20 +81,31 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
                                     <RowDefinition Height="auto" />
-                                    <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
-                                <!-- Default Header -->
-                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
                                 <!-- Custom Content -->
-                                <!-- ... -->
-                                <!-- Default Footer -->
+                                <BitmapIcon UriSource="/Assets/Seating.png"
+                                            ShowAsMonochrome="False"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Center"
+                                            Height="240"
+                                            Grid.RowSpan="2" />
+                                <!-- Default Content -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}"
+                                           Grid.Column="1" />
                                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Right"
-                                            Grid.Row="2">
+                                            VerticalAlignment="Bottom"
+                                            Grid.Row="1"
+                                            Grid.Column="1">
                                     <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
-                                            Content="&lt;= Go back" />
+                                            Content="&lt;  Go back" />
                                     <Button Command="{x:Bind NextCommand, Mode=OneWay}"
-                                            Content="Continue =&gt;"
+                                            Content="Continue  &gt;"
                                             Margin="10 0 0 0" />
                                 </StackPanel>
                             </Grid>
@@ -88,7 +114,9 @@
                 </Expander>
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          DataContext="{x:Bind ViewModel.Steps[2], Mode=OneWay}">
+                          DataContext="{x:Bind ViewModel.Steps[2], Mode=OneWay}"
+                          IsExpanded="{x:Bind ViewModel.Steps[2].IsActive, Mode=TwoWay}"
+                          Margin="0 4 0 0">
                     <Expander.HeaderTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
@@ -100,20 +128,31 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
                                     <RowDefinition Height="auto" />
-                                    <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
-                                <!-- Default Header -->
-                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
                                 <!-- Custom Content -->
-                                <!-- ... -->
-                                <!-- Default Footer -->
+                                <BitmapIcon UriSource="/Assets/Account.png"
+                                            ShowAsMonochrome="False"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Center"
+                                            Height="240"
+                                            Grid.RowSpan="2" />
+                                <!-- Default Content -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}"
+                                           Grid.Column="1" />
                                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Right"
-                                            Grid.Row="2">
+                                            VerticalAlignment="Bottom"
+                                            Grid.Row="1"
+                                            Grid.Column="1">
                                     <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
-                                            Content="&lt;= Go back" />
+                                            Content="&lt;  Go back" />
                                     <Button Command="{x:Bind NextCommand, Mode=OneWay}"
-                                            Content="Continue =&gt;"
+                                            Content="Continue  &gt;"
                                             Margin="10 0 0 0" />
                                 </StackPanel>
                             </Grid>
@@ -122,7 +161,9 @@
                 </Expander>
                 <Expander HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
-                          DataContext="{x:Bind ViewModel.Steps[3], Mode=OneWay}">
+                          DataContext="{x:Bind ViewModel.Steps[3], Mode=OneWay}"
+                          IsExpanded="{x:Bind ViewModel.Steps[3].IsActive, Mode=TwoWay}"
+                          Margin="0 4 0 0">
                     <Expander.HeaderTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
@@ -134,20 +175,31 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
                                     <RowDefinition Height="auto" />
-                                    <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
-                                <!-- Default Header -->
-                                <TextBlock Text="{x:Bind Description, Mode=OneWay}" />
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
                                 <!-- Custom Content -->
-                                <!-- ... -->
-                                <!-- Default Footer -->
+                                <BitmapIcon UriSource="/Assets/Payment.png"
+                                            ShowAsMonochrome="False"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Left"
+                                            Margin="0 0 10 0"
+                                            Height="240"
+                                            Grid.RowSpan="2" />
+                                <!-- Default Content -->
+                                <TextBlock Text="{x:Bind Description, Mode=OneWay}"
+                                           Grid.Column="1" />
                                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Right"
-                                            Grid.Row="2">
+                                            VerticalAlignment="Bottom"
+                                            Grid.Row="1"
+                                            Grid.Column="1">
                                     <Button Command="{x:Bind PreviousCommand, Mode=OneWay}"
-                                            Content="&lt;= Go back" />
-                                    <Button Command="{x:Bind NextCommand, Mode=OneWay}"
-                                            Content="Continue =&gt;"
+                                            Content="&lt;  Go back" />
+                                    <Button Content="Confirm"
                                             Margin="10 0 0 0" />
                                 </StackPanel>
                             </Grid>

@@ -14,26 +14,27 @@ namespace XamlBrewer.WinUI3.ExpanderSample.Views
                 {
                 new WizardStepViewModel(viewModel)
                 {
+                    IsActive = true,
                     AllowReturn = true,
-                    Name = "Movie",
+                    Name = "Your movie",
                     Description = "Select a movie and a time"
                 },
                 new WizardStepViewModel(viewModel)
                 {
                     AllowReturn = true,
-                    Name = "Seat",
+                    Name = "Your seat",
                     Description = "Select a row and a seat"
                 },
                 new WizardStepViewModel(viewModel)
                 {
                     AllowReturn = false,
-                    Name = "Customer",
+                    Name = "Yourself",
                     Description = "Provide contact information"
                 },
                 new WizardStepViewModel(viewModel)
                 {
                     AllowReturn = false,
-                    Name = "Payment",
+                    Name = "Your money",
                     Description = "Select a payment method and ... pay"
                 }
             };

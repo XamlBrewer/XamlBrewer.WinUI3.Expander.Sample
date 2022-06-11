@@ -8,9 +8,6 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
         [ObservableProperty]
         private List<WizardStepViewModel> _steps = new();
 
-        [ObservableProperty]
-        private WizardStepViewModel _current;
-
         internal WizardStepViewModel NextStep(WizardStepViewModel step)
         {
             var stepIndex = _steps.IndexOf(step);

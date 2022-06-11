@@ -14,9 +14,13 @@
   <ItemGroup>
     <None Remove="Assets\About.png" />
     <None Remove="Assets\Accordion.png" />
+    <None Remove="Assets\Account.png" />
     <None Remove="Assets\Heart.png" />
     <None Remove="Assets\Home.png" />
+    <None Remove="Assets\Movie.png" />
     <None Remove="Assets\Orange.png" />
+    <None Remove="Assets\Payment.png" />
+    <None Remove="Assets\Seating.png" />
     <None Remove="Assets\Violet.png" />
     <None Remove="Assets\Wizard.png" />
     <None Remove="Shell.xaml" />
