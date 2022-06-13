@@ -36,6 +36,36 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
 
         public ICommand NextCommand { get; private set; }
 
+        public string PreviousLabel
+        {
+            get
+            {
+                var previous = _wizard.PreviousStep(this);
+
+                if (previous is null)
+                {
+                    return "Restart";
+                }
+
+                return "<  Go back";
+            }
+        }
+
+        public string NextLabel
+        {
+            get
+            {
+                var next = _wizard.NextStep(this);
+
+                if (next is null)
+                {
+                    return "Confirm";
+                }
+
+                return "Continue  >";
+            }
+        }
+
         public bool Commit()
         {
             // Validate and persist Model
@@ -54,6 +84,9 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
 
             if (previous is null)
             {
+                // Restart
+                // ...
+
                 return;
             }
 
@@ -72,7 +105,8 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
 
             if (previous is null)
             {
-                return false;
+                // Go back or Restart
+                return true;
             }
 
             if (!previous.AllowReturn)
@@ -103,12 +137,12 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
 
         private bool Next_CanExecute()
         {
-            var next = _wizard.NextStep(this);
+            // var next = _wizard.NextStep(this);
 
-            if (next is null)
-            {
-                return false;
-            }
+            // if (next is null)
+            // {
+            //    return false;
+            // }
 
             return true;
         }
