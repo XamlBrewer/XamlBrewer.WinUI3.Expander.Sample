@@ -24,23 +24,21 @@
                           CornerRadius="4" />
                 </Expander>
                 <Expander Width="234">
-                    <Expander.HeaderTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <BitmapIcon UriSource="/Assets/Orange.png"
-                                            ShowAsMonochrome="False"
-                                            Height="24" />
-                                <TextBlock Foreground="Orange"
-                                           HorizontalAlignment="Right"
-                                           VerticalAlignment="Center"
-                                           Grid.Column="1">Orange</TextBlock>
-                            </Grid>
-                        </DataTemplate>
-                    </Expander.HeaderTemplate>
+                    <Expander.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <BitmapIcon UriSource="/Assets/Orange.png"
+                                        ShowAsMonochrome="False"
+                                        Height="24" />
+                            <TextBlock Foreground="Orange"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Center"
+                                       Grid.Column="1">Orange</TextBlock>
+                        </Grid>
+                    </Expander.Header>
                     <Grid Background="Orange"
                           Height="100"
                           Width="200"
@@ -111,7 +109,8 @@
         <ContentControl x:Name="HorizontalExpander"
                         RelativePanel.RightOf="VerticalExpander"
                         VerticalContentAlignment="Top"
-                        Margin="20 0 0 0" Background="Azure">
+                        Margin="20 0 0 0"
+                        Background="Azure">
             <ContentControl.RenderTransform>
                 <RotateTransform Angle="270"
                                  CenterX="117"

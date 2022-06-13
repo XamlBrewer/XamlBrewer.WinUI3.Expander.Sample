@@ -18,15 +18,26 @@
             <ItemsControl x:Name="Wizard"
                           HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch">
-                <Expander HorizontalAlignment="Stretch"
+                <ItemsControl.Resources>
+                    <DataTemplate x:Name="WizardHeaderTemplate"
+                                  x:DataType="viewmodels:WizardStepViewModel">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
+                            <TextBlock Text="{x:Bind Status, Mode=OneWay}"
+                                       FontStyle="Italic"
+                                       Grid.Column="1" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.Resources>
+                <Expander HeaderTemplate="{StaticResource WizardHeaderTemplate}"
+                          HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
                           DataContext="{x:Bind ViewModel.Steps[0], Mode=OneWay}"
                           IsExpanded="{x:Bind ViewModel.Steps[0].IsActive, Mode=TwoWay}">
-                    <Expander.HeaderTemplate>
-                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
-                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
-                        </DataTemplate>
-                    </Expander.HeaderTemplate>
                     <Expander.ContentTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <Grid>
@@ -65,16 +76,12 @@
                         </DataTemplate>
                     </Expander.ContentTemplate>
                 </Expander>
-                <Expander HorizontalAlignment="Stretch"
+                <Expander HeaderTemplate="{StaticResource WizardHeaderTemplate}"
+                          HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
                           DataContext="{x:Bind ViewModel.Steps[1], Mode=OneWay}"
                           IsExpanded="{x:Bind ViewModel.Steps[1].IsActive, Mode=TwoWay}"
                           Margin="0 4 0 0">
-                    <Expander.HeaderTemplate>
-                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
-                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
-                        </DataTemplate>
-                    </Expander.HeaderTemplate>
                     <Expander.ContentTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <Grid>
@@ -112,16 +119,12 @@
                         </DataTemplate>
                     </Expander.ContentTemplate>
                 </Expander>
-                <Expander HorizontalAlignment="Stretch"
+                <Expander HeaderTemplate="{StaticResource WizardHeaderTemplate}"
+                          HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
                           DataContext="{x:Bind ViewModel.Steps[2], Mode=OneWay}"
                           IsExpanded="{x:Bind ViewModel.Steps[2].IsActive, Mode=TwoWay}"
                           Margin="0 4 0 0">
-                    <Expander.HeaderTemplate>
-                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
-                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
-                        </DataTemplate>
-                    </Expander.HeaderTemplate>
                     <Expander.ContentTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <Grid>
@@ -159,16 +162,12 @@
                         </DataTemplate>
                     </Expander.ContentTemplate>
                 </Expander>
-                <Expander HorizontalAlignment="Stretch"
+                <Expander HeaderTemplate="{StaticResource WizardHeaderTemplate}"
+                          HorizontalAlignment="Stretch"
                           HorizontalContentAlignment="Stretch"
                           DataContext="{x:Bind ViewModel.Steps[3], Mode=OneWay}"
                           IsExpanded="{x:Bind ViewModel.Steps[3].IsActive, Mode=TwoWay}"
                           Margin="0 4 0 0">
-                    <Expander.HeaderTemplate>
-                        <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
-                            <TextBlock Text="{x:Bind Name, Mode=OneWay}" />
-                        </DataTemplate>
-                    </Expander.HeaderTemplate>
                     <Expander.ContentTemplate>
                         <DataTemplate x:DataType="viewmodels:WizardStepViewModel">
                             <Grid>

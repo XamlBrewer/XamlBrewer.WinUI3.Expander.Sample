@@ -16,6 +16,9 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
         private string _description;
 
         [ObservableProperty]
+        private string _status;
+
+        [ObservableProperty]
         private bool _allowReturn = true;
 
         [ObservableProperty]
@@ -33,8 +36,17 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
 
         public ICommand NextCommand { get; private set; }
 
-        public void Enter()
-        { }
+        public bool Commit()
+        {
+            // Validate and persist Model
+            // ...
+
+            // Update Status - Mockup
+            Status = "Succes";
+
+            // Return result
+            return true;
+        }
 
         private void Previous_Executed()
         {
@@ -73,6 +85,11 @@ namespace XamlBrewer.WinUI3.ExpanderSample.ViewModels
 
         private void Next_Executed()
         {
+            if (!Commit())
+            {
+                return;
+            }
+
             var next = _wizard.NextStep(this);
 
             if (next is null)
