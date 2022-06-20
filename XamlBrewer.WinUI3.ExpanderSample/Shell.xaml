@@ -20,7 +20,7 @@
                         IsSettingsVisible="False"
                         Margin="0">
             <NavigationView.PaneCustomContent>
-                <HyperlinkButton NavigateUri="https://xamlbrewer.wordpress.com/2022/05/30/multi-windowing-in-winui-3/"
+                <HyperlinkButton NavigateUri="https://xamlbrewer.wordpress.com/2022/06/20/stretching-the-winui-3-expander-control/"
                                  Margin="8 0">Blog post</HyperlinkButton>
             </NavigationView.PaneCustomContent>
             <NavigationView.MenuItems>
